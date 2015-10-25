@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+<!-- КАТЕГОРИИ -->
+    	
+	
+	<bean id="Stationery" class="ru.ugfeld.id.lec1.categories.Category">
+		<property name="name" value="Канцтовары"></property>
+	</bean>
+	
+	
+<!-- ТОВАРЫ -->
+	
+
+	<bean id="Pencil" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Stationery"></property>
+		<property name="name" value="Карандаш"></property>
+		<property name="price" value="10"></property>
+	</bean>
+	
+	<bean id="Pen" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Stationery"></property>
+		<property name="name" value="Ручка"></property>
+		<property name="price" value="15"></property>
+	</bean>
+	
+	<bean id="Rubber" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Stationery"></property>
+		<property name="name" value="Ластик"></property>
+		<property name="price" value="5"></property>
+	</bean>
+	
+	<bean id="Puncher" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Stationery"></property>
+		<property name="name" value="Дырокол"></property>
+		<property name="price" value="50"></property>
+	</bean>	
+	
+
+<!-- СКЛАД -->
+	
+	
+	<bean id="AnotherWarehouse" class="ru.ugfeld.id.lec1.warehouses.Warehouse" >		
+  		<property name="products">
+		<map>
+			<entry key-ref="Pencil" value="325" />	
+			<entry key-ref="Pen" value="515" />
+			<entry key-ref="Rubber" value="725" />
+		<!-- 	<entry key-ref="Puncher" value="135" />			 -->		
+		</map>
+		</property>
+	</bean>
+
+</beans>

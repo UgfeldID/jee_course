@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd" >
+	
+	
+
+   	
+<!-- КАТЕГОРИИ -->
+    	
+	
+	<bean id="Book" class="ru.ugfeld.id.lec1.categories.Category">
+		<property name="name" value="Книга"></property>
+	</bean>
+	
+	
+<!-- ТОВАРЫ -->
+	
+
+	<bean id="Kolobok" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Book"></property>
+		<property name="name" value="Колобок"></property>
+		<property name="price" value="100"></property>
+	</bean>
+	
+	<bean id="DesignPatterns" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Book"></property>
+		<property name="name" value="Паттерны проектирования"></property>
+		<property name="price" value="1000"></property>
+	</bean>
+	
+	<bean id="MasterAndMargarita" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Book"></property>
+		<property name="name" value="Мастер и Маргарита"></property>
+		<property name="price" value="500"></property>
+	</bean>
+	
+	<bean id="Physics8Grade" class="ru.ugfeld.id.lec1.products.Product" >	
+		<property name="category" ref="Book"></property>
+		<property name="name" value="Физика 8 класс"></property>
+		<property name="price" value="300"></property>
+	</bean>
+	
+	
+<!-- СКЛАД -->
+	
+	
+	<bean id="Warehouse" class="ru.ugfeld.id.lec1.warehouses.Warehouse" >		
+  		<property name="products">
+		<map>
+			<entry key-ref="Kolobok" value="5" />	
+			<entry key-ref="DesignPatterns" value="15" />
+			<entry key-ref="MasterAndMargarita" value="25" />
+		<!-- 	<entry key-ref="Physics8Grade" value="35" />	 -->				
+		</map>
+	</property>
+		
+	</bean>
+	
+</beans>
