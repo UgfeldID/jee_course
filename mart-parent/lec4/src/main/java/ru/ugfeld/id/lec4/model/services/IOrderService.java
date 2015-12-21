@@ -1,0 +1,13 @@
+package ru.ugfeld.id.lec4.model.services;
+
+import java.util.List;
+
+import ru.ugfeld.id.lec4.model.entities.Order;
+
+public interface IOrderService {
+	public Order create(Order order);
+	public Order delete (int id) throws Exception;
+	public List< Order > findAll( );
+	public Order update( Order order ) throws Exception;
+	public Order findById( int id );
+}

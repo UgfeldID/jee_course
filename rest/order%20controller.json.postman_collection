@@ -1,0 +1,58 @@
+{
+	"id": "dec74cae-c40e-271c-abf8-bf52d08bd25c",
+	"name": "order controller",
+	"description": "",
+	"order": [
+		"c4e7ff21-dc59-4a6e-4be3-c2048a9852b0",
+		"c62c600c-c3ad-7cc2-dd31-9360d01aafb7"
+	],
+	"folders": [],
+	"timestamp": 1449583116711,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "c4e7ff21-dc59-4a6e-4be3-c2048a9852b0",
+			"headers": "Content-Type: application/json\n",
+			"url": "localhost:8080/lec2/rest/orders?customerId=1",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "dec74cae-c40e-271c-abf8-bf52d08bd25c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "добавить заказ",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1449583116710,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"order\" : {}\n}"
+		},
+		{
+			"id": "c62c600c-c3ad-7cc2-dd31-9360d01aafb7",
+			"headers": "",
+			"url": "localhost:8080/lec2/rest/orders/2",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "dec74cae-c40e-271c-abf8-bf52d08bd25c",
+			"data": [],
+			"dataMode": "raw",
+			"name": "удалить заказ по ид",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1449583166655,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": ""
+		}
+	]
+}

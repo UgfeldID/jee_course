@@ -1,12 +1,10 @@
 package ru.ugfeld.id.lec1;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import ru.ugfeld.id.lec1.categories.Category;
-import ru.ugfeld.id.lec1.products.IProduct;
-import ru.ugfeld.id.lec1.products.Product;
-import ru.ugfeld.id.lec1.warehouses.IWarehouse;
 
 /**
  * Hello world!
@@ -14,11 +12,13 @@ import ru.ugfeld.id.lec1.warehouses.IWarehouse;
  */
 public class App 
 {
+	private static final Logger log = LoggerFactory.getLogger(App.class );
     public static void main( String[] args )
     {
-    	ApplicationContext ctx=new ClassPathXmlApplicationContext( "classpath:warehouseOwnerBeans.xml" );    
+    	ApplicationContext ctx=new ClassPathXmlApplicationContext( "classpath:beans.xml" );    
     	WarehouseOwner warehouseOwner=(WarehouseOwner)ctx.getBean("WarehouseOwner");    	
     	
-    	System.out.println( "Using warehouse class: "+warehouseOwner.getWarehouse().getClass().getName());       
+    	System.out.println( "Using warehouse class: "+warehouseOwner.getWarehouse().getClass().getName()); 
+    	log.info("Using warehouse class: "+warehouseOwner.getWarehouse().getClass().getName());
     }
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+<import resource="classpath:warehouseBeans.xml" />
+<import resource="classpath:anotherWarehouseBeans.xml" />
+
+	<bean id="WarehouseOwner" class="ru.ugfeld.id.lec1.WarehouseOwner" >		
+		<property name="warehouse" ref="Warehouse" />	
+	</bean>	
+	
+	
+ 	<bean id="Runner" class="ru.ugfeld.id.lec2.Runner"  init-method="init">
+		<property name="warehouseOwner" ref="WarehouseOwner"></property>  
+	</bean> 
+	
+	<!-- Лекция 3 -->	
+	 
+ 	<bean id="WarehousesRestrictions" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:global/cfg/Config/warehousesRestrictions" />
+		<property name="lookupOnStartup" value="true" />
+	</bean>
+	
+	<bean id="Runner2" class="ru.ugfeld.id.lec3.RunnerBean" init-method="init" >
+		<property name="warehousesRestrictions" ref="WarehousesRestrictions" />
+	</bean>  
+	
+	<!-- Лекция 4 -->
+	
+	<context:annotation-config />
+	<context:component-scan base-package="ru.ugfeld.id" />
+
+	<import resource="database.xml" />
+	
+	<bean id="Runner3" class="ru.ugfeld.id.lec4.RunnerBean" init-method="init">
+		<property name="customerService" ref="CustomerService" />
+		<property name="orderService" ref="OrderService" />
+		<property name="orderItemService" ref="OrderItemService" />
+		<property name="productService" ref="ProductService" />
+		<property name="warehouseService" ref="WarehouseService" />
+		<property name="categoryService" ref="CategoryService"/> 
+	</bean>  
+	
+	<!-- Лекция 7 -->
+	
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory" >
+		<property name="brokerURL" value="tcp://localhost:61616" />
+	</bean>
+
+	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop" >
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
+	
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate" >
+		<property name="connectionFactory" ref="jmsFactory" />
+	</bean>
+	
+	<bean id="requestsQueue" class="org.apache.activemq.command.ActiveMQQueue" >
+		<constructor-arg value="goods.requests" />
+	</bean>
+	
+	 <jms:listener-container container-type="default" connection-factory="jmsFactory" acknowledge="auto" destination-type="queue" >
+		<jms:listener destination="goods.responses" ref="productsListener" method="onMessage" />
+	</jms:listener-container>  
+	
+	<!-- beans -->
+	
+	<bean id="productsListener" class="ru.ugfeld.id.lec7.jms.ProductsListener" >
+		<property name="warehouseService" ref="WarehouseService" />
+		<property name="productService" ref="ProductService" />
+		<property name="categoryService" ref="CategoryService"/>
+		
+	</bean>
+	
+	<bean id="productsRequester" class="ru.ugfeld.id.lec7.jms.Requester" init-method="request">
+		<property name="jmsTemplate" ref="jmsTemplate" />
+		<property name="destination" ref="requestsQueue" />
+	</bean>
+	
+</beans>

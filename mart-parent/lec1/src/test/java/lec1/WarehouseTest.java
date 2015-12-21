@@ -7,13 +7,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import ru.ugfeld.id.lec1.WarehouseOwner;
-import ru.ugfeld.id.lec1.categories.Category;
 import ru.ugfeld.id.lec1.products.IProduct;
-import ru.ugfeld.id.lec1.products.Product;
-import ru.ugfeld.id.lec1.warehouses.AnotherWarehouse;
-import ru.ugfeld.id.lec1.warehouses.IWarehouse;
-import ru.ugfeld.id.lec1.warehouses.Warehouse;
 import ru.ugfeld.id.lec1.warehouses.WarehouseBase;
 
 public class WarehouseTest {

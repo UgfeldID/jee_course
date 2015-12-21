@@ -11,7 +11,7 @@
 	</bean>	
 	
 	
-<!-- 	<bean id="runner" class="ru.ugfeld.id.lec1.Runner" init-method="init">
+ <!-- 	<bean id="runner" class="ru.ugfeld.id.lec1.Runner" init-method="init">
 		<property name="warehouseOwner" ref="WarehouseOwner"></property>  
 	</bean>  -->
 </beans>

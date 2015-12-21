@@ -1,0 +1,56 @@
+{
+	"id": "e96100f6-ede9-f061-1121-a4507f16cca8",
+	"name": "customer controller",
+	"description": "",
+	"order": [
+		"0326f6a2-4679-a1d8-ae33-f870900c7181",
+		"bc9cce62-adff-b659-e01c-263253249bfa"
+	],
+	"folders": [],
+	"timestamp": 1449583279251,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "0326f6a2-4679-a1d8-ae33-f870900c7181",
+			"headers": "",
+			"url": "localhost:8080/lec2/rest/customers/1/orders",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "e96100f6-ede9-f061-1121-a4507f16cca8",
+			"data": [],
+			"dataMode": "params",
+			"name": "получить все заказы клиента",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1449583279251,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "bc9cce62-adff-b659-e01c-263253249bfa",
+			"headers": "",
+			"url": "localhost:8080/lec2/rest/customers/1/orders/3",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "e96100f6-ede9-f061-1121-a4507f16cca8",
+			"data": [],
+			"dataMode": "params",
+			"name": "удалить заказ по ид",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1449583345942,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

@@ -1,7 +1,6 @@
 package ru.ugfeld.id.lec1.warehouses;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +10,7 @@ public abstract class WarehouseBase implements IWarehouse{
 	private static final double PRODUCT_DEFAULT_QUANTITY=0;
 	protected Map<IProduct,Double> products=null;
 	
-	public WarehouseBase(){
-		products=new HashMap<>();
+	public WarehouseBase(){	
 	}
 	
 	@Override

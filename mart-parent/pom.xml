@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.ugfeld.id</groupId>
   <artifactId>mart-parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
   
   <properties>
@@ -11,6 +11,16 @@
 		<java-version>1.7</java-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler-version>3.3</maven.compiler-version>
+		<org.slf4j-version>1.7.12</org.slf4j-version>
+		<persistence-api-version>1.0.2</persistence-api-version>
+		<org.eclipse.persistence-version>2.5.1</org.eclipse.persistence-version>
+		<org.springframework.data.jpa-version>1.9.0.RELEASE</org.springframework.data.jpa-version>
+		<servlet.api-version>2.5</servlet.api-version>
+		<servlet.api-version>2.5</servlet.api-version>
+		<jstl-version>1.2</jstl-version>
+		<activemq-version>5.13.0</activemq-version>
+		<com.fasterxml.jackson-version>2.5.2</com.fasterxml.jackson-version>
+		<spring-jms-version>4.1.6.RELEASE</spring-jms-version>
 	</properties>
 	
 	<build>
@@ -47,10 +57,25 @@
 			<artifactId>junit</artifactId>
 			<version>${junit-version}</version>
 		</dependency> 
+		
+		<!-- Log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>		
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		
   </dependencies>
   <modules>  
   	<module>lec1</module>
   	<module>lec2war</module>
   	<module>lec2ear</module>
+  	<module>lec4</module>
   </modules>
 </project>

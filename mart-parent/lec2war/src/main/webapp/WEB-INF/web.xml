@@ -13,12 +13,34 @@
 		<param-value>
 			classpath:warehouseBeans.xml
 			classpath:anotherWarehouseBeans.xml
-			classpath:warehouseOwnerBeans.xml
+			classpath:beans.xml
 		</param-value>
 	</context-param>
 	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:servlet-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+		
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+	<persistence-context-ref>
+		<description>Shop PU</description>
+		<persistence-context-ref-name>jpa/default_pu</persistence-context-ref-name>
+		<persistence-unit-name>default_pu</persistence-unit-name>
+		<persistence-context-type>Transaction</persistence-context-type>
+	</persistence-context-ref>
 	
 </web-app>

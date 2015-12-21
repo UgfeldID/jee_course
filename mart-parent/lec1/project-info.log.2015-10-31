@@ -1,0 +1,5 @@
+2015-10-31 15:31:34,831 INFO [org.springframework.context.support.ClassPathXmlApplicationContext] - <Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@dc8e807: startup date [Sat Oct 31 15:31:34 YEKT 2015]; root of context hierarchy>
+2015-10-31 15:31:34,874 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - <Loading XML bean definitions from class path resource [warehouseOwnerBeans.xml]>
+2015-10-31 15:31:34,981 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - <Loading XML bean definitions from class path resource [warehouseBeans.xml]>
+2015-10-31 15:31:35,067 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - <Loading XML bean definitions from class path resource [anotherWarehouseBeans.xml]>
+2015-10-31 15:31:35,190 INFO [ru.ugfeld.id.lec1.App] - <Using warehouse class: ru.ugfeld.id.lec1.warehouses.Warehouse>

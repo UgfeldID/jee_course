@@ -3,7 +3,7 @@
   <parent>
     <groupId>ru.ugfeld.id</groupId>
     <artifactId>mart-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
   <artifactId>lec2ear</artifactId>
   <packaging>ear</packaging>
@@ -49,4 +49,5 @@
         </plugins>        
 	</build>
     
+    <version>1.0.0</version>
 </project>

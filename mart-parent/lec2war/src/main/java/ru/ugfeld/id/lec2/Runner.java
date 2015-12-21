@@ -1,4 +1,6 @@
-package ru.ugfeld.id.lec1;
+package ru.ugfeld.id.lec2;
+
+import ru.ugfeld.id.lec1.WarehouseOwner;
 
 public class Runner {
 	private WarehouseOwner warehouseOwner;
@@ -9,6 +11,8 @@ public class Runner {
 		this.warehouseOwner = warehouseOwner;
 	}
 	public void init(){
-		System.out.println( "Using warehouse class: "+warehouseOwner.getWarehouse().getClass().getName());       
+		System.out.println( "Using warehouse class: "+warehouseOwner.getWarehouse().getClass().getName()); 		
 	}
+	
+	
 }
